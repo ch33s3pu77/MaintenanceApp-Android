@@ -14,4 +14,10 @@
     <string name="in_progress">In Progress</string>
     <string name="not_started">Not Started</string>
     <string name="new_jobs">New Jobs</string>
+    <string name="asset">Asset:</string>
+    <string name="calibration_type">Type of Calibration:</string>
+    <string name="notes">Notes:</string>
+    <string name="priority">Priority:</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>
