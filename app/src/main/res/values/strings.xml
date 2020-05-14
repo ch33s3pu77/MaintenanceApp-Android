@@ -20,4 +20,17 @@
     <string name="priority">Priority:</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="job">Job:</string>
+    <string name="status">Status:</string>
+    <string name="hold_reason">Hold Reason:</string>
+    <string name="task_description">Task Description:</string>
+    <string name="location">Location:</string>
+    <string name="due_by">Due By:</string>
+    <string name="on_hold_job">On Hold:</string>
+    <string name="started">Started:</string>
+    <string name="assigned_to">Assigned To:</string>
+    <string name="signed_off">Signed Off:</string>
+    <string name="start">Start</string>
+    <string name="sign_off">Sign Off</string>
+    <string name="close">Close</string>
 </resources>
