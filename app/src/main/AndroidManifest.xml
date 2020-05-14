@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".input.SignOff"></activity>
+        <activity android:name=".output.NotStarted"></activity>
+        <activity android:name=".output.InProgress" />
+        <activity android:name=".output.Completed" />
+        <activity android:name=".input.SignOff" />
         <activity android:name=".input.PutOnHold" />
         <activity android:name=".input.NewJob" />
         <activity android:name=".output.JobOrder" />
