@@ -8,4 +8,10 @@
     <string name="forgot_password">Forgot Your Password?</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="name">Name</string>
+    <string name="my_jobs">My Jobs</string>
+    <string name="completed">Completed</string>
+    <string name="on_hold">On Hold</string>
+    <string name="in_progress">In Progress</string>
+    <string name="not_started">Not Started</string>
+    <string name="new_jobs">New Jobs</string>
 </resources>
