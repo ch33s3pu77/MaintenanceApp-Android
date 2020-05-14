@@ -33,4 +33,6 @@
     <string name="start">Start</string>
     <string name="sign_off">Sign Off</string>
     <string name="close">Close</string>
+    <string name="sign_off_date">Sign Off Date:</string>
+    <string name="pass_fail">Pass/Fail:</string>
 </resources>
