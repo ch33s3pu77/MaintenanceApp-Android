@@ -35,4 +35,10 @@
     <string name="close">Close</string>
     <string name="sign_off_date">Sign Off Date:</string>
     <string name="pass_fail">Pass/Fail:</string>
+    <string name="measure">Measure:</string>
+    <string name="upper">Upper:</string>
+    <string name="lower">Lower:</string>
+    <string name="actual_result">Actual Result:</string>
+    <string name="result">Result:</string>
+    <string name="overall_pass_fail">Overall Pass/Fail:</string>
 </resources>
