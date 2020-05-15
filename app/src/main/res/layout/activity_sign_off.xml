@@ -326,7 +326,7 @@
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/txt_result"
-                app:layout_constraintTop_toBottomOf="@+id/txt_outputCalibrationType" />
+                app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
             <TextView
                 android:id="@+id/txt_notes"
@@ -344,9 +344,9 @@
                 android:id="@+id/txt_inputNotes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:inputType="textLongMessage|textEmailAddress"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -374,20 +374,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txt_outputAsset"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="sans-serif"
-                android:text="TextView"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_asset" />
-
-            <TextView
                 android:id="@+id/txt_calibrationType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -397,21 +383,7 @@
                 android:text="@string/calibration_type"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_outputAsset" />
-
-            <TextView
-                android:id="@+id/txt_outputCalibrationType"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="sans-serif"
-                android:text="TextView"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_calibrationType" />
+                app:layout_constraintTop_toBottomOf="@+id/spnr_asset" />
 
             <TextView
                 android:id="@+id/txt_measure"
@@ -423,7 +395,7 @@
                 android:text="@string/measure"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_outputCalibrationType" />
+                app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
             <TextView
                 android:id="@+id/txt_upper"
@@ -435,7 +407,7 @@
                 android:text="@string/upper"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/txt_measure"
-                app:layout_constraintTop_toBottomOf="@+id/txt_outputCalibrationType" />
+                app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
             <TextView
                 android:id="@+id/txt_lower"
@@ -447,7 +419,7 @@
                 android:text="@string/lower"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/txt_upper"
-                app:layout_constraintTop_toBottomOf="@+id/txt_outputCalibrationType" />
+                app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
             <TextView
                 android:id="@+id/txt_result"
@@ -459,7 +431,7 @@
                 android:text="@string/result"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/txt_lower"
-                app:layout_constraintTop_toBottomOf="@+id/txt_outputCalibrationType" />
+                app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
             <TextView
                 android:id="@+id/txt_outputMeasure1"
@@ -492,6 +464,28 @@
                 android:layout_marginTop="32dp"
                 app:layout_constraintStart_toEndOf="@+id/txt_"
                 app:layout_constraintTop_toBottomOf="@+id/txt_outputLower5" />
+
+            <Spinner
+                android:id="@+id/spnr_asset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_asset" />
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_calibrationType" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
