@@ -41,4 +41,5 @@
     <string name="actual_result">Actual Result:</string>
     <string name="result">Result:</string>
     <string name="overall_pass_fail">Overall Pass/Fail:</string>
+    <string name="username">Username</string>
 </resources>
