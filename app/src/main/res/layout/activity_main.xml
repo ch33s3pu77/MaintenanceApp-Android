@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:fontFamily="sans-serif"
-        android:text="@string/login"
+        android:text="My Jobs"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
