@@ -39,6 +39,7 @@ public class MyJobs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_jobs);
+
         mJobId = findViewById(R.id.txt_ID);
         mType = findViewById(R.id.txt_Type);
         mPriority = findViewById(R.id.txt_Priority);
@@ -62,6 +63,7 @@ public class MyJobs extends AppCompatActivity {
         });
         SharedPrefManager sharedPrefManager = new SharedPrefManager();
         USERNAME = sharedPrefManager.getUsername(mContext);
+        appURL = "192.168.247.100/api/myJobs.php?User_Name=" + USERNAME;
         getJobs();
     }
 
@@ -150,7 +152,7 @@ public class MyJobs extends AppCompatActivity {
                     } else {
                         alert = new AlertDialog.Builder(mContext);
                         alert.setTitle("Error");
-                        alert.setMessage("There was an erro. \n Please try again.");
+                        alert.setMessage("There was an error. \n Please try again.");
                         alert.setCancelable(false);
                         alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
