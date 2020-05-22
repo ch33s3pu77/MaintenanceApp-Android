@@ -11,6 +11,13 @@ public class JobOrders {
         this.mLocation = mLocation;
     }
 
+    public JobOrders(String mJobId, String mType, String mPriority,String mLocation){
+        this.mJobId = mJobId;
+        this.mType = mType;
+        this.mPriority = mPriority;
+        this.mLocation = mLocation;
+    }
+
     public String getmJobId() {
         return mJobId;
     }
