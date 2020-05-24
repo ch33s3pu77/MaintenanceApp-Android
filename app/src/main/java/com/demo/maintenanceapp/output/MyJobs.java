@@ -59,13 +59,14 @@ public class MyJobs extends AppCompatActivity {
         //mPriority = findViewById(R.id.txt_Priority);
         //mStatus = findViewById(R.id.txt_Status);
         //mLocation = findViewById(R.id.txt_Location);
-        /*listView.getOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
                 Intent intent = new Intent(getApplicationContext(), JobOrder.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
         mClose = findViewById(R.id.btn_close);
         mClose.setOnClickListener(new View.OnClickListener() {

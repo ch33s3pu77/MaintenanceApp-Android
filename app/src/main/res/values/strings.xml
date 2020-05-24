@@ -43,4 +43,12 @@
     <string name="overall_pass_fail">Overall Pass/Fail:</string>
     <string name="username">Username</string>
     <string name="new_job">New Job</string>
+    <string-array name="calibration_type">
+        <item>Item One</item>
+        <item>Item Two</item>
+    </string-array>
+    <string-array name="priority_items">
+        <item>Item one</item>
+        <item>Item two</item>
+    </string-array>
 </resources>

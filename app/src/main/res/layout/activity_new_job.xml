@@ -79,6 +79,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="125dp"
+                android:entries="@array/calibration_type"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_calibrationType" />
@@ -114,13 +115,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/txt_inputNotes" />
 
             <Spinner
-                android:id="@+id/spinner3"
+                android:id="@+id/spnr_Priority"
                 android:layout_width="393dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="125dp"
                 android:layout_marginBottom="8dp"
+                android:entries="@array/priority_items"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

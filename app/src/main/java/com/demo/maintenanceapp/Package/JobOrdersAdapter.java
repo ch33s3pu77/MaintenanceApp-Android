@@ -46,4 +46,6 @@ public class JobOrdersAdapter extends ArrayAdapter<JobOrders> {
 
         return view;
     }
+
+
 }
