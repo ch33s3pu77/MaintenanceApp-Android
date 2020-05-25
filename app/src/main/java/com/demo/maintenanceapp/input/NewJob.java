@@ -15,10 +15,8 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.demo.maintenanceapp.Model.Asset;
-import com.demo.maintenanceapp.Model.JobOrders;
-import com.demo.maintenanceapp.Package.AssetAdapter;
-import com.demo.maintenanceapp.Package.JobOrdersAdapter;
+import com.demo.maintenanceapp.model.Asset;
+import com.demo.maintenanceapp.adapterPackage.AssetAdapter;
 import com.demo.maintenanceapp.R;
 import com.demo.maintenanceapp.volley.VolleySingleton;
 
@@ -26,7 +24,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

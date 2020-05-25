@@ -1,4 +1,4 @@
-package com.demo.maintenanceapp.Package;
+package com.demo.maintenanceapp.adapterPackage;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,10 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import com.demo.maintenanceapp.Model.JobOrders;
+import com.demo.maintenanceapp.model.JobOrders;
 import com.demo.maintenanceapp.R;
 
 import java.util.List;

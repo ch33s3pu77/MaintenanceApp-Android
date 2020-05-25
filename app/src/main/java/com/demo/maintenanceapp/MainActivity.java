@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         appURL = "http://192.168.247.100/api/login.php";
         mUsername = findViewById(R.id.text_Username);
         mPassword = findViewById(R.id.text_Password);
@@ -47,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void login(){
+    private void login() {
         USERNAME = mUsername.getText().toString();
         PASSWORD = mPassword.getText().toString();
 
-        if (USERNAME.isEmpty()){
+        if (USERNAME.isEmpty()) {
             AlertDialog.Builder alert = new AlertDialog.Builder(mContext);
             alert.setMessage("Username cannot be empty");
             alert.setCancelable(false);
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             alert.show();
-        } else if (PASSWORD.isEmpty()){
+        } else if (PASSWORD.isEmpty()) {
             AlertDialog.Builder alert = new AlertDialog.Builder(mContext);
             alert.setMessage("Password cannot be empty");
             alert.setCancelable(false);
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             alert.show();
-        } else if (PASSWORD.length() < 8){
+        } else if (PASSWORD.length() < 8) {
             AlertDialog.Builder alert = new AlertDialog.Builder(mContext);
             alert.setMessage("Password must be at least 8 characters");
             alert.setCancelable(false);
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             alert.show();
-        } else if (PASSWORD.length() < 15){
+        } else if (PASSWORD.length() > 15) {
             AlertDialog.Builder alert = new AlertDialog.Builder(mContext);
             alert.setMessage("Password must be less than 15 characters");
             alert.setCancelable(false);
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onResponse(String response) {
                     if (response.equals("true")) {
                         Intent intent = new Intent(mContext, Dashboard.class);
+                        //intent.putExtra("username", USERNAME);
                         SharedPrefManager sharedPrefManager = new SharedPrefManager();
                         sharedPrefManager.saveUsername(getApplicationContext(), USERNAME);
                         Log.d(TAG, "Username saved " + USERNAME);
@@ -123,8 +125,8 @@ public class MainActivity extends AppCompatActivity {
                 public void onErrorResponse(VolleyError error) {
                     AlertDialog.Builder alert;
                     NetworkResponse response = error.networkResponse;
-                    if(response != null && response.data != null){
-                        switch(response.statusCode){
+                    if (response != null && response.data != null) {
+                        switch (response.statusCode) {
                             case 400:
                                 alert = new AlertDialog.Builder(mContext);
                                 alert.setTitle("Error");
@@ -188,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 @Override
-                protected Map<String, String> getParams() throws AuthFailureError{
+                protected Map<String, String> getParams() throws AuthFailureError {
                     HashMap<String, String> params = new HashMap<>();
                     params.put("username", USERNAME);
                     params.put("password", PASSWORD);

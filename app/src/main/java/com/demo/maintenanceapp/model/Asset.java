@@ -1,4 +1,4 @@
-package com.demo.maintenanceapp.Model;
+package com.demo.maintenanceapp.model;
 
 public class Asset {
     String mName;
