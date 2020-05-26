@@ -22,7 +22,7 @@
         <activity android:name=".input.NewJob" />
         <activity android:name=".output.JobOrder" />
         <activity android:name=".output.OnHold" />
-        <activity android:name=".output.MyJobs" />
+        <activity android:name=".output.MyJobs"></activity>
         <activity android:name=".Dashboard" />
         <activity android:name=".MainActivity">
             <intent-filter>

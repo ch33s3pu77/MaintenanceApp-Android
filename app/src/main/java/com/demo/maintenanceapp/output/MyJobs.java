@@ -2,6 +2,7 @@ package com.demo.maintenanceapp.output;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -16,10 +17,12 @@ import android.widget.TextView;
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.demo.maintenanceapp.Dashboard;
+import com.demo.maintenanceapp.Handler;
 import com.demo.maintenanceapp.model.JobOrders;
 import com.demo.maintenanceapp.adapterPackage.JobOrdersAdapter;
 import com.demo.maintenanceapp.R;
@@ -45,28 +48,23 @@ public class MyJobs extends AppCompatActivity {
     ListView listView;
     List<JobOrders> jobOrdersList;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_jobs);
 
-        listView = (ListView) findViewById(R.id.lv_Job_Orders);
         jobOrdersList = new ArrayList<>();
 
-        //mJobId = findViewById(R.id.txt_ID);
-        //mType = findViewById(R.id.txt_Type);
-        //mPriority = findViewById(R.id.txt_Priority);
-        //mStatus = findViewById(R.id.txt_Status);
-        //mLocation = findViewById(R.id.txt_Location);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listView = (ListView) findViewById(R.id.lv_Job_Orders);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
-                Intent intent = new Intent(getApplicationContext(), JobOrder.class);
-                startActivity(intent);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
             }
         });
+        /*listView.onItemClickListener(new AdapterView.OnItemClickListener(){
+
+        });*/
 
         mClose = findViewById(R.id.btn_close);
         mClose.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +74,7 @@ public class MyJobs extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         mNewJob = findViewById(R.id.btn_newJob);
         mNewJob.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,9 +83,10 @@ public class MyJobs extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         SharedPrefManager sharedPrefManager = new SharedPrefManager();
         USERNAME = sharedPrefManager.getUsername(mContext);
-        appURL = "192.168.247.100/api/myJobs.php?User_Name=" + USERNAME;
+        appURL = "http://192.168.247.100/api/myJobs.php?username=" + USERNAME;
         getJobs();
     }
 
@@ -117,7 +117,8 @@ public class MyJobs extends AppCompatActivity {
                                     jobObj.getString("Status"), jobObj.getString("Location"));
                             jobOrdersList.add(jobOrder);
                         }
-                        JobOrdersAdapter adapter = new JobOrdersAdapter(jobOrdersList,getApplicationContext());
+
+                        JobOrdersAdapter adapter = new JobOrdersAdapter(jobOrdersList, getApplicationContext());
                         listView.setAdapter(adapter);
                     } catch (JSONException e) {
                         e.printStackTrace();

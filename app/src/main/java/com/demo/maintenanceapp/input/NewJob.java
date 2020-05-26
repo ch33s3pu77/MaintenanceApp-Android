@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import com.android.volley.AuthFailureError;
@@ -15,6 +18,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.demo.maintenanceapp.Dashboard;
 import com.demo.maintenanceapp.model.Asset;
 import com.demo.maintenanceapp.adapterPackage.AssetAdapter;
 import com.demo.maintenanceapp.R;
@@ -35,12 +39,26 @@ public class NewJob extends AppCompatActivity {
     private Spinner mAssetName;
     List<Asset> assetNameList;
     ArrayAdapter<Asset> data;
+    Button mCancel, mSave;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_job);
+        mCancel = findViewById(R.id.btn_cancel);
+        mCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Dashboard.class);
+                startActivity(intent);
+            }
+        });
+
+        mSave = findViewById(R.id.btn_save);
+
+
+        appURL = "http://192.168.247.100/api/getAssetID.php";
 
         mAssetName = (Spinner) findViewById(R.id.spnr_asset);
         assetNameList = new ArrayList<Asset>();
@@ -66,10 +84,10 @@ public class NewJob extends AppCompatActivity {
                 public void onResponse(String response) {
                     try {
                         JSONObject jsonObject = new JSONObject(response);
-                        JSONArray array = jsonObject.getJSONArray("completed");
+                        JSONArray array = jsonObject.getJSONArray("assetID");
                         for (int i = 0; i < array.length(); i++){
                             JSONObject jobObj = new JSONObject(response);
-                            Asset asset = new Asset(jobObj.getString("Job_ID"));
+                            Asset asset = new Asset(jobObj.getString("Asset_ID"));
                             assetNameList.add(asset);
                         }
                         //JobOrdersAdapter adapter = new JobOrdersAdapter(assetNameList,getApplicationContext());
